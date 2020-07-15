@@ -1,2 +1,2 @@
-# -learningAngular
+# -LearningAngular
 Learning Angular
