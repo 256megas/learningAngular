@@ -11,15 +11,15 @@ export class VideojuegoComponent implements OnInit,DoCheck{
   constructor(){
     this.titulo ="Componente de videojuegs"
     this.listado="Listado de los juegos mas populares"
-    console.log("se ha cargado el componente videojuego.Componente")
+    //console.log("se ha cargado el componente videojuego.Componente")
   }
 
   ngOnInit(){
-    console.log("OnInit");
+    //console.log("OnInit");
   }
 
   ngDoCheck(){
-    console.log("DoCheck");
+    //console.log("DoCheck");
   }
 
   cambiarTitulo(){

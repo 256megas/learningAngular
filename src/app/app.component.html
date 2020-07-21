@@ -1,7 +1,9 @@
-<div>
+<div [ngStyle]="{
+          'background': fondo,
+          'border': '3px solid black'
+        }">
   <h1>{{title}}</h1>
-  <p>Vamos a aprender Angular Juntos</p>
-  <videojuego></videojuego>
+  <p>{{descripcion}}</p>
   <zapatillas></zapatillas>
-  <cursos></cursos>
+
   </div>
