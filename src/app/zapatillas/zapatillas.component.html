@@ -1,4 +1,12 @@
 <h2>{{titulo}}</h2>
+
+<p>Añadir marca</p>
+<p><input type="text"  [(ngModel)]="mi_marca">
+<button (click)="getMarca()">MostrarMArca</button>
+
+<button (click)="addMarca()">AddMArca</button></p>
+<p>{{mi_marca}}</p>
+
 <ul>
   <li *ngFor="let zapatilla of zapatillas">
       {{zapatilla.nombre}} - <strong>{{zapatilla.precio}} </strong>

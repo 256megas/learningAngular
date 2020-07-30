@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { Zapatilla } from '../models/zapatilla';
 
+
+
 @Component({
   selector: 'zapatillas',
   templateUrl: './zapatillas.component.html',
@@ -9,8 +11,10 @@ export class ZapatillasComponent implements OnInit{
   public titulo: string;
   public zapatillas: Array<Zapatilla>;
   public color:string;
+  public mi_marca:string;
 
   constructor() {
+    this.mi_marca="fila";
     this.color="red";
     this.zapatillas = [
       new Zapatilla('Reebok Classic', 80, 'reebook', 'blanca', true),
@@ -27,5 +31,13 @@ export class ZapatillasComponent implements OnInit{
     this.zapatillas.forEach((value,index)=>{
 
     })
+  }
+
+  getMarca(){
+    alert(this.mi_marca)
+  }
+  addMarca(){
+    this.zapatillas.push(new Zapatilla('Reebok Classic', 80, 'reebook', 'blanca', true));
+
   }
 }
