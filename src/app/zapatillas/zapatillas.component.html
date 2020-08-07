@@ -11,11 +11,17 @@
 
 <ul>
   <li *ngFor="let zapatilla of zapatillas; let indice = index">
-    {{ zapatilla.nombre }} - <strong>{{ zapatilla.precio }} </strong>
+    {{ zapatilla.nombre }} -
+    <strong
+        [class.altoPrecio]="zapatilla.precio >=80"
+        [ngClass]="['fondoRojo','subrayado']"
+    >
+            {{ zapatilla.precio }} </strong>
     <span
       *ngIf="zapatilla.precio < 80"
       [style.background]="zapatilla.precio < 80 ? 'green' : 'transparent'"
       [style.color]="zapatilla.precio < 80 ? 'white' : 'black'"
+
       >¡ EN OFERTA !</span
     >
 

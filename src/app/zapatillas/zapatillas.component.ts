@@ -38,11 +38,11 @@ export class ZapatillasComponent implements OnInit {
     );
   }
 
-  borrarMarca(indice){
+  borrarMarca(indice) {
     delete this.zapatillas[indice];
   }
 
-  mostrarPalabra(){
+  mostrarPalabra() {
     alert(this.mi_marca);
   }
 }
