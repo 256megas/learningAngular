@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Zapatilla } from '../models/zapatilla';
+import { ZapatillaService } from '../services/zapatilla.service';
 
 @Component({
   selector: 'zapatillas',
   templateUrl: './zapatillas.component.html',
+  providers: [ZapatillaService],
 })
 export class ZapatillasComponent implements OnInit {
   public titulo: string;
-  public zapatillas: Array<Zapatilla>;
+
   public color: string;
   public mi_marca: string;
 
-  constructor() {
+  constructor(private _zapatillaService: ZapatillaService) {
     this.mi_marca = 'fila';
     this.color = 'red';
-    this.zapatillas = [
-      new Zapatilla('Reebok Classic', 80, 'reebook', 'blanca', true),
-      new Zapatilla('Nike Runner MD', 60, 'Nike', 'negras', true),
-      new Zapatilla('Adidas Yezzy', 180, 'Adidas', 'gris', false),
-    ];
   }
 
   ngOnInit() {
     console.log(this.zapatillas);
+    this.zapatillas = this._zapatillaService.getZapatillas();
   }
 
   marcas() {
@@ -39,7 +37,7 @@ export class ZapatillasComponent implements OnInit {
   }
 
   borrarMarca(indice) {
-    delete this.zapatillas[indice];
+    this.zapatillas.splice(indice, 1);
   }
 
   mostrarPalabra() {
