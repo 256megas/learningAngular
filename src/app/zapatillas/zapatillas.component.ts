@@ -9,7 +9,7 @@ import { ZapatillaService } from '../services/zapatilla.service';
 })
 export class ZapatillasComponent implements OnInit {
   public titulo: string;
-
+  public zapatillas;
   public color: string;
   public mi_marca: string;
 
@@ -32,9 +32,11 @@ export class ZapatillasComponent implements OnInit {
   }
   addMarca() {
     this.zapatillas.push(
-      new Zapatilla('Reebok Classic', 80, 'reebook', 'blanca', true)
+      new Zapatilla(this.mi_marca, 80, 'reebook', 'blanca', true)
     );
+
   }
+
 
   borrarMarca(indice) {
     this.zapatillas.splice(indice, 1);
